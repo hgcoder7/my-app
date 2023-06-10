@@ -6,7 +6,7 @@ export default function About() {
         color:'black',
         background:'white',
     })
-    const[btntext,setBtnText]=useState('Enabke dark mode')
+    const[btntext,setBtnText]=useState('Enable dark mode')
 
     const toggleStyle=()=>{
         if(myStyle.color ==='black'){
@@ -33,7 +33,7 @@ export default function About() {
   <div className ="accordion-item" >
     <h2 className ="accordion-header">
       <button className ="accordion-button" style={myStyle}type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
+        <strong>Accordion Item #1</strong>
       </button>
     </h2>
     <div id="collapseOne" className ="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -45,7 +45,7 @@ export default function About() {
   <div className ="accordion-item" >
     <h2 className ="accordion-header">
       <button className ="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
+      <strong>  Accordion Item #2</strong>
       </button>
     </h2>
     <div id="collapseTwo" className ="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -57,7 +57,7 @@ export default function About() {
   <div className ="accordion-item" >
     <h2 className ="accordion-header">
       <button className ="accordion-button collapsed" type="button" data-bs-toggle="collapse" style={myStyle} data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
+      <strong>  Accordion Item #3</strong>
       </button>
     </h2>
     <div id="collapseThree"  className ="accordion-collapse collapse" data-bs-parent="#accordionExample">

@@ -13,6 +13,20 @@ const handlelowercase =()=>{
   setText(newText);
   props.showAlert("Converted to lowercase!","success");
 }
+const handleCleartext =()=>{
+  let newText = "";
+  setText(newText);
+}
+const handleExtraspaces =()=>{
+  let newText = text.split(/[ ]+/);
+  setText(newText.join(" "));
+}
+// const handleCopytext =()=>{
+  
+//   var Text = document.getElementById("mybox");
+//     Text.select();
+//   navigator.clipboard.writeText(Text.value);
+// }
 const handleOnChange= (event)=>{
   console.log('onchange');
   setText(event.target.value);
@@ -27,15 +41,18 @@ const handleOnChange= (event)=>{
         <div className="mb-3">
         
       
-        <textarea className="my box" value={text} style={{ backgroundColor: props.mode ==='dark' ? 'grey':'white', color: props.mode ==='dark'?'white' :'black' }}  onChange={handleOnChange} rows="8"></textarea>
+        <textarea className="mybox" value={text} style={{ backgroundColor: props.mode ==='dark' ? 'grey':'white', color: props.mode ==='dark'?'white' :'black' }}  onChange={handleOnChange} rows="8"></textarea>
 
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleuppercase}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-2" onClick={handlelowercase}>Convert to Lowercase</button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleuppercase}>Convert to Uppercase</button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handlelowercase}>Convert to Lowercase</button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleCleartext}>Clear text</button>
+        {/* <button className="btn btn-primary mx-2 my-2" onClick={handleCopytext}>Copy text</button> */}
+        <button className="btn btn-primary mx-2 my-2" onClick={handleExtraspaces}>remove extra spaces</button>
         </div>
         < div className="container my-3" style={{color: props.mode ==='dark'?'white' :'black'}}>
          <h1>Your text  summary</h1>
-         <p>{text.split(" ").length} words and {text.length} character</p>
+         <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} character</p>
          <p>{0.008* text.split(" ").length} wpm</p>
 
     </div>
